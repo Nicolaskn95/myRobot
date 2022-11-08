@@ -1,0 +1,819 @@
+{
+    "1457": {
+        "confidence": 80.0,
+        "path": ".images\\1457-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "ADP": {
+        "confidence": 53.0,
+        "path": ".images\\adp-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Acoes": {
+        "confidence": 55.0,
+        "path": ".images\\acoes-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "AdmdeInfo": {
+        "confidence": 80.0,
+        "path": ".images\\admdeinfo-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Admissao": {
+        "confidence": 54.0,
+        "path": ".images\\admissao-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Afastamentos": {
+        "confidence": 54.0,
+        "path": ".images\\afastamentos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Agencias.Bancarias": {
+        "confidence": 54.0,
+        "path": ".images\\agencias-bancarias-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Ambos": {
+        "confidence": 79.0,
+        "path": ".images\\ambos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Ano.Base": {
+        "confidence": 54.0,
+        "path": ".images\\ano-base-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Ano.Resumo.Folha": {
+        "confidence": 54.0,
+        "path": ".images\\ano-resumo-folha-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Arquivo.de.erros": {
+        "confidence": 55.0,
+        "path": ".images\\arquivo-de-erros-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Arquivos": {
+        "confidence": 76.0,
+        "path": ".images\\arquivos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Arquivos.de.Confer\u00eancia": {
+        "confidence": 70.0,
+        "path": ".images\\arquivos-de-confer\u00eancia-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Arquivos_": {
+        "confidence": 53.0,
+        "path": ".images\\arquivos_-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Arquivos_EXP": {
+        "confidence": 50.0,
+        "path": ".images\\arquivos_exp-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Atualiza\u00e7\u00e3o.end.CEP": {
+        "confidence": 72.0,
+        "path": ".images\\atualiza\u00e7\u00e3o-end-cep-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Autonomos": {
+        "confidence": 54.0,
+        "path": ".images\\autonomos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Avancar": {
+        "confidence": 54.0,
+        "path": ".images\\avancar-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Avisos": {
+        "confidence": 65.0,
+        "path": ".images\\avisos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Beneficiarios": {
+        "confidence": 65.0,
+        "path": ".images\\beneficiarios-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "CadastrosSatis": {
+        "confidence": 80.0,
+        "path": ".images\\cadastrossatis-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Cargos.e.Funcoes": {
+        "confidence": 54.0,
+        "path": ".images\\cargos-e-funcoes-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Centros.de.Resultado": {
+        "confidence": 54.0,
+        "path": ".images\\centros-de-resultado-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "CodIndiceMoedas": {
+        "confidence": 80.0,
+        "path": ".images\\codindicemoedas-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Concessao.Beneficios": {
+        "confidence": 45.0,
+        "path": ".images\\concessao-beneficios-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Concluir": {
+        "confidence": 80.0,
+        "path": ".images\\concluir-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Conf.Empregados.Ativos": {
+        "confidence": 54.0,
+        "path": ".images\\conf-empregados-ativos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Conf.Estabelecimentos.Ativos": {
+        "confidence": 54.0,
+        "path": ".images\\conf-estabelecimentos-ativos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Conf.pessoas.fisicas.nao.ativas": {
+        "confidence": 54.0,
+        "path": ".images\\conf-pessoas-fisicas-nao-ativas-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Consolidado.13": {
+        "confidence": 70.0,
+        "path": ".images\\consolidado-13-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Consolidado.D": {
+        "confidence": 70.0,
+        "path": ".images\\consolidado-d-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Consolidado.M": {
+        "confidence": 70.0,
+        "path": ".images\\consolidado-m-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Convenio": {
+        "confidence": 54.0,
+        "path": ".images\\convenio-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Dados.Pessoais": {
+        "confidence": 54.0,
+        "path": ".images\\dados-pessoais-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Dados.de.Pagamento": {
+        "confidence": 54.0,
+        "path": ".images\\dados-de-pagamento-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Demitidos": {
+        "confidence": 54.0,
+        "path": ".images\\demitidos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Dependentes": {
+        "confidence": 54.0,
+        "path": ".images\\dependentes-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Desktop": {
+        "confidence": 69.0,
+        "path": ".images\\desktop-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Destination.Print": {
+        "confidence": 35.0,
+        "path": ".images\\destination-print-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Detalhes.da.execucao": {
+        "confidence": 53.0,
+        "path": ".images\\detalhes-da-execucao-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Dezembro": {
+        "confidence": 54.0,
+        "path": ".images\\dezembro-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Empregados.sem.cabe\u00e7alho.de.folha": {
+        "confidence": 73.0,
+        "path": ".images\\empregados-sem-cabe\u00e7alho-de-folha-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Empregados.sem.folha.de.ferias": {
+        "confidence": 74.0,
+        "path": ".images\\empregados-sem-folha-de-ferias-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Enderecos": {
+        "confidence": 54.0,
+        "path": ".images\\enderecos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Exportacao.da.ficha.financeira": {
+        "confidence": 60.0,
+        "path": ".images\\exportacao-da-ficha-financeira-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Exporta\u00e7\u00e3o.de.Ficha.Financeira": {
+        "confidence": 80.0,
+        "path": ".images\\exporta\u00e7\u00e3o-de-ficha-financeira-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Extras": {
+        "confidence": 80.0,
+        "path": ".images\\extras-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Fechar.Salvos": {
+        "confidence": 75.0,
+        "path": ".images\\fechar-salvos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "FileName": {
+        "confidence": 80.0,
+        "path": ".images\\filename-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "File_name": {
+        "confidence": 76.0,
+        "path": ".images\\file_name-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Formatar": {
+        "confidence": 30.0,
+        "path": ".images\\formatar-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Geral": {
+        "confidence": 80.0,
+        "path": ".images\\geral-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Historico.Salarial": {
+        "confidence": 73.0,
+        "path": ".images\\historico-salarial-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Historico.de.Funcao": {
+        "confidence": 54.0,
+        "path": ".images\\historico-de-funcao-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Historico.de.Lotacao": {
+        "confidence": 54.0,
+        "path": ".images\\historico-de-lotacao-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Icone.Impressora": {
+        "confidence": 35.0,
+        "path": ".images\\icone-impressora-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Id.Global": {
+        "confidence": 50.0,
+        "path": ".images\\id-global-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Imprimir": {
+        "confidence": 35.0,
+        "path": ".images\\imprimir-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Incluir": {
+        "confidence": 54.0,
+        "path": ".images\\incluir-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Inconsist.eSocial": {
+        "confidence": 71.0,
+        "path": ".images\\inconsist-esocial-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "LoginSatis": {
+        "confidence": 80.0,
+        "path": ".images\\loginsatis-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Lupa": {
+        "confidence": 55.0,
+        "path": ".images\\lupa-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Mensal": {
+        "confidence": 54.0,
+        "path": ".images\\mensal-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Mes.Resumo.Folha": {
+        "confidence": 54.0,
+        "path": ".images\\mes-resumo-folha-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Mes.ano.final": {
+        "confidence": 54.0,
+        "path": ".images\\mes-ano-final-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Mes.ano.inicial": {
+        "confidence": 54.0,
+        "path": ".images\\mes-ano-inicial-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Mes.final": {
+        "confidence": 54.0,
+        "path": ".images\\mes-final-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Moedas": {
+        "confidence": 80.0,
+        "path": ".images\\moedas-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Mostrar.V": {
+        "confidence": 70.0,
+        "path": ".images\\mostrar-v-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Num.Resumo.Folha": {
+        "confidence": 54.0,
+        "path": ".images\\num-resumo-folha-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Periodos.Aquisitivos": {
+        "confidence": 76.0,
+        "path": ".images\\periodos-aquisitivos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Pesq.Resumo.Folha": {
+        "confidence": 54.0,
+        "path": ".images\\pesq-resumo-folha-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "PesqLimpa": {
+        "confidence": 50.0,
+        "path": ".images\\pesqlimpa-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "PesqLocal": {
+        "confidence": 80.0,
+        "path": ".images\\pesqlocal-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "PesquisaCamera": {
+        "screenshot": ".images\\pesquisacamera-screenshot.png",
+        "source": "https://www.google.com/imghp?hl=pt-BR&tab=8i",
+        "strategy": "xpath",
+        "type": "browser",
+        "value": "//div[@id='ow7']/div/div/div[3]/div[4]"
+    },
+    "PesquisaRaio": {
+        "confidence": 80.0,
+        "path": ".images\\pesquisaraio-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Pesquisar": {
+        "confidence": 50.0,
+        "path": ".images\\pesquisar-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Previdencia.Privada": {
+        "confidence": 54.0,
+        "path": ".images\\previdencia-privada-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Processamento.Concluido": {
+        "confidence": 53.0,
+        "path": ".images\\processamento-concluido-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Processos": {
+        "confidence": 61.0,
+        "path": ".images\\processos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Registro.de.Emprego": {
+        "confidence": 54.0,
+        "path": ".images\\registro-de-emprego-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Rel.Inconsist.eSocial": {
+        "confidence": 54.0,
+        "path": ".images\\rel-inconsist-esocial-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Relacao.de.Empregados": {
+        "confidence": 54.0,
+        "path": ".images\\relacao-de-empregados-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Replace.file": {
+        "confidence": 50.0,
+        "path": ".images\\replace-file-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Resumo.de.folha": {
+        "confidence": 54.0,
+        "path": ".images\\resumo-de-folha-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Rotinas": {
+        "confidence": 80.0,
+        "path": ".images\\rotinas-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "SATIS": {
+        "confidence": 80.0,
+        "path": ".images\\satis-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Save.PDF": {
+        "confidence": 35.0,
+        "path": ".images\\save-pdf-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Save.Print": {
+        "confidence": 35.0,
+        "path": ".images\\save-print-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Save.as.PDF": {
+        "confidence": 35.0,
+        "path": ".images\\save-as-pdf-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Save.link.as": {
+        "confidence": 55.0,
+        "path": ".images\\save-link-as-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Seguro": {
+        "confidence": 54.0,
+        "path": ".images\\seguro-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Selecione.Competencia.Referencia": {
+        "confidence": 53.0,
+        "path": ".images\\selecione-competencia-referencia-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "SetasMoedas": {
+        "confidence": 80.0,
+        "path": ".images\\setasmoedas-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Sindicatos.e.Categorias.Profissionais": {
+        "confidence": 54.0,
+        "path": ".images\\sindicatos-e-categorias-profissionais-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Teste1": {
+        "confidence": 80.0,
+        "path": ".images\\teste1-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Todos": {
+        "confidence": 55.0,
+        "path": ".images\\todos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Vale.Ticket": {
+        "confidence": 54.0,
+        "path": ".images\\vale-ticket-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Vale.Transporte": {
+        "confidence": 54.0,
+        "path": ".images\\vale-transporte-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Validador.Relacional": {
+        "confidence": 55.0,
+        "path": ".images\\validador-relacional-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Validador.por.Empregado": {
+        "confidence": 80.0,
+        "path": ".images\\validador-por-empregado-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Vinculo.Empregaticio": {
+        "confidence": 54.0,
+        "path": ".images\\vinculo-empregaticio-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Visualizar": {
+        "confidence": 54.0,
+        "path": ".images\\visualizar-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Visualizar.PDF": {
+        "confidence": 54.0,
+        "path": ".images\\visualizar-pdf-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Visualizar.Resultado": {
+        "confidence": 55.0,
+        "path": ".images\\visualizar-resultado-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "Yes.button": {
+        "confidence": 55.0,
+        "path": ".images\\yes-button-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "campoTexto": {
+        "confidence": 80.0,
+        "path": ".images\\campotexto-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "cancelar": {
+        "confidence": 80.0,
+        "path": ".images\\cancelar-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "config_chrome": {
+        "confidence": 80.0,
+        "path": ".images\\config_chrome-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "dataMoeda": {
+        "confidence": 80.0,
+        "path": ".images\\datamoeda-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "denominacao": {
+        "confidence": 80.0,
+        "path": ".images\\denominacao-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "downPage": {
+        "confidence": 80.0,
+        "path": ".images\\downpage-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "email": {
+        "confidence": 80.0,
+        "path": ".images\\email-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "emailOpcional": {
+        "confidence": 80.0,
+        "path": ".images\\emailopcional-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "endereco": {
+        "confidence": 80.0,
+        "path": ".images\\endereco-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "estruturas_de_implantacao": {
+        "confidence": 80.0,
+        "path": ".images\\estruturas_de_implantacao-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "export_tables": {
+        "confidence": 80.0,
+        "path": ".images\\export_tables-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "exportacao_importacao": {
+        "confidence": 80.0,
+        "path": ".images\\exportacao_importacao-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "hojeMoeda": {
+        "confidence": 80.0,
+        "path": ".images\\hojemoeda-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "manutRegEmp": {
+        "confidence": 80.0,
+        "path": ".images\\manutregemp-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "periodo_ferias": {
+        "confidence": 80.0,
+        "path": ".images\\periodo_ferias-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "pessoaFisica": {
+        "confidence": 80.0,
+        "path": ".images\\pessoafisica-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "pessoa_fisica": {
+        "confidence": 80.0,
+        "path": ".images\\pessoa_fisica-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "registro_emprego": {
+        "confidence": 80.0,
+        "path": ".images\\registro_emprego-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "selectName": {
+        "confidence": 80.0,
+        "path": ".images\\selectname-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "startIndexArquivos_tab": {
+        "confidence": 80.0,
+        "path": ".images\\startindexarquivos_tab-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "startIndexNome": {
+        "confidence": 80.0,
+        "path": ".images\\startindexnome-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "startIndex_Ambos": {
+        "confidence": 74.0,
+        "path": ".images\\startindex_ambos-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "startIndex_arquivosErros": {
+        "confidence": 50.0,
+        "path": ".images\\startindex_arquivoserros-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "startIndex_denominacao": {
+        "confidence": 79.0,
+        "path": ".images\\startindex_denominacao-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "startIndex_depend": {
+        "confidence": 50.0,
+        "path": ".images\\startindex_depend-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "startIndex_vinculo": {
+        "confidence": 80.0,
+        "path": ".images\\startindex_vinculo-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "testFile": {
+        "confidence": 80.0,
+        "path": ".images\\testfile-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "teste_satis": {
+        "confidence": 80.0,
+        "path": ".images\\teste_satis-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "usuarios_transporte": {
+        "confidence": 80.0,
+        "path": ".images\\usuarios_transporte-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "valores_alimenticia": {
+        "confidence": 80.0,
+        "path": ".images\\valores_alimenticia-path.png",
+        "source": null,
+        "type": "image"
+    }
+}

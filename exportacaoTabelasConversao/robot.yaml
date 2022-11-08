@@ -1,0 +1,27 @@
+tasks:
+  Run all tasks:
+    shell: python -m robot --report NONE --outputdir output --logtitle "Task log" tasks.robot
+          
+  Run exportTable:
+    robotTaskName: exportTable
+
+  Run chooseProcess:
+    robotTaskName: chooseProcess  
+
+
+
+condaConfigFile: conda.yaml
+artifactsDir: output
+PATH:
+  - .
+PYTHONPATH:
+  - keywords
+  - libraries
+  - variables
+  #- C:\Users\nicolas\AppData\Local\Programs\Python\Python310\Lib
+  #- Clear caches and restart
+  #- .
+  #- resources
+
+ignoreFiles:
+  - .gitignore
