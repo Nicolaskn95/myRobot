@@ -1,0 +1,19 @@
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9.13
+  - pip=22.1.2
+  #tesseract=5.0.1
+  - pip:
+      - numpy==1.23.0
+      - numpy
+      - rpaframework-recognition==5.0.0
+      - robotframework-capturefast==1.8.0
+      - rpaframework==17.0.1
+      - pywebview[qt]==3.6.3
+      #rpaframework[aws]==13.1.0
+      #- robotframework-ocrlibrary
+      #- ocrmypdf==13.7.0
+      #- rpaframework==15.8.0 # https://rpaframework.org/releasenotes.html
+      #- robotframework-capturefast
+      #- robotframework-ocrlibrary
