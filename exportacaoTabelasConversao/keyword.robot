@@ -243,14 +243,12 @@ exportacao_importacao
     RPA.Desktop.Click
     Send Keys To Input    {VK_TAB}  TRUE  0.0  0.0
 Processamento_Concluido
+
     IF    ${var1} == ${var1}
         Call Keyword
     ELSE
         
-    END    
-
-
-
+    END   
 
     FOR    ${counter}    IN RANGE    1    24000    1
         sleep    0.5s
@@ -268,7 +266,7 @@ Processamento_Concluido
     IF    len("${sair}") > 1
         Acoes
     ELSE
-        Log    Erro ao encontrar elemento Processamento Concluído
+    
     END
 
 # 0_Agban
