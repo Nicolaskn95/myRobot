@@ -23,3 +23,8 @@ Library           DateTime
 
 Resource          keywords.robot
 
+*** Tasks ***
+    ${arquivo}=    Coleta_Nome_do_Arquivo_Excel  
+    Notas_fiscais
+    
+
