@@ -1,0 +1,54 @@
+DOUBTS :
+
+- arquivos em PDF irei extrair ? e achar os valores ? São padroes: dados bancarios/ banco itau
+- tem um icone a mais :dados adicionais da nota prov
+- eu consigo localizar tos os valores com alguma referencia
+
+STEP:
+clicar no sinal "+"
+os campos irão ser preenchidos com alguma info de um arquivo excel?
+
+razao social cliente
+cfop
+condiçao de cobrança
+centro de custo emitente
+codigo do subgrupo
+
+- SALVAR
+- depois clicar no icone novo e apagar a a data
+- ir na aba ITENS NF e apertar no "+" logo apertar novamente "+"
+** fazer um processo caso tenha dois itens ai ele executurá duas vezes
+
+codigo do serviço
+quantidade
+valor unit moeda org
+codigos tributacao
+centro de custo
+- SALVAR
+-apertar no CONFERIR NOTAFISCAL
+OBS: ele entra na aba vencimentos, mas não efetua nenhuma mudança ou adição
+----SECOND VIDEO----
+- copiar dados bancarios que fica abaixo de discriminaçao dos serviços
+- e colar na aba OBS NF no campo OBSERVAÇÃO GERAL DA NOTA , depois SALVAR, conferir nota fiscal
+
+--- CRIAR OUTRA TASK ---
+nf de serviço eletronica
+
+*** variables ***
+razao_social
+cfop
+cond_cobranca
+centro_custo_emit
+vendedor
+cod_subgrupo
+
+cod_servico
+quantidade
+valor_unit_moeda
+valor_merc_terce
+valor_bruto
+valor_base_ret_inss
+cod_tribut
+tipo_serv
+mun_prest_serv
+centro_custo

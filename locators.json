@@ -1,0 +1,26 @@
+{
+    "aba_itens_nf": {
+        "confidence": 80.0,
+        "path": ".images\\aba_itens_nf-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "add": {
+        "confidence": 80.0,
+        "path": ".images\\add-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "sair": {
+        "confidence": 80.0,
+        "path": ".images\\sair-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "salvar": {
+        "confidence": 80.0,
+        "path": ".images\\salvar-path.png",
+        "source": null,
+        "type": "image"
+    }
+}
