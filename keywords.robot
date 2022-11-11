@@ -21,9 +21,10 @@ Library           DateTime
 
 
 *** Variables ***
-@{numero_itens}=    1    2    3    4    
-@{quantidade_de_itens}=    1    1    2    1    2    3     1    2    3    4
+@{numero_itens}=    5    8    2    4    
+@{quantidade_de_itens}=    1    2    3    4    5    1	2	3	4	5	6	7	8    1    2    1    2    3    4    
 ${cont}=    0
+${index}=    0
 *** Keywords ***
 
 entrar_Notas_fiscais
@@ -58,24 +59,23 @@ Coleta_Nome_do_Arquivo_Excel
 aba_notas_fiscais2
     
     FOR    ${element}    IN    @{numero_itens}
-        
+        Log    ${element}
         Repeat Keyword    ${element}    repeat_itens  ${element}    ${cont}
             ${cont}=    Set Variable    ${${cont}+${1}}
     END
 repeat_itens
     [Arguments]   ${element}    ${cont}
     ${total_element}=  Get Length    ${quantidade_de_itens}
-    FOR    ${index}    ${element}    IN ENUMERATE    @{quantidade_de_itens}
-        FOR    ${element}    IN RANGE    ${index}    ${total_element}
-            # Log    ${counter}
-            Log    ${index}: ${element}
-            Log    ${quantidade_de_itens[${${cont}}]}
+    FOR    ${counter}    IN RANGE    0   ${total_element}
+        IF    ${quantidade_de_itens} >= ${0}
+            Call Keyword
+            ${quantidade_de_itens}
+        ELSE
             
         END
+        Log    ${counter}
+        ${quantidade_de_itens}=   Set Variable   ${${index}+${element}}
     END
-
-
-
     # FOR    ${counter}    IN RANGE    0    {END}
 
     #     Log    @{LIST_2}
