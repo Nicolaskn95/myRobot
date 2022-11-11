@@ -19,7 +19,13 @@ Library           String
 Library           RPA.HTTP
 Library           DateTime
 
+
+*** Variables ***
+@{numero_itens}=    1    2    3    4    
+@{quantidade_de_itens}=    1    1    2    1    2    3     1    2    3    4
+${cont}=    0
 *** Keywords ***
+
 entrar_Notas_fiscais
     # Send Keys To Input    {VK_MENU}    FALSE    
     Send Keys To Input    {VK_MENU}    FALSE   0.0    0.0   
@@ -49,6 +55,33 @@ Coleta_Nome_do_Arquivo_Excel
     ${result}=    Run dialog
     [Return]    ${result.fileupload}[0]
 
+aba_notas_fiscais2
+    
+    FOR    ${element}    IN    @{numero_itens}
+        
+        Repeat Keyword    ${element}    repeat_itens  ${element}    ${cont}
+            ${cont}=    Set Variable    ${${cont}+${1}}
+    END
+repeat_itens
+    [Arguments]   ${element}    ${cont}
+    ${total_element}=  Get Length    ${quantidade_de_itens}
+    FOR    ${index}    ${element}    IN ENUMERATE    @{quantidade_de_itens}
+        FOR    ${element}    IN RANGE    ${index}    ${total_element}
+            # Log    ${counter}
+            Log    ${index}: ${element}
+            Log    ${quantidade_de_itens[${${cont}}]}
+            
+        END
+    END
+
+
+
+    # FOR    ${counter}    IN RANGE    0    {END}
+
+    #     Log    @{LIST_2}
+        
+    # END
+
 aba_notas_fiscais
     [Arguments]   ${arquivo}
     #Botao.Click    alias:Id.Global    ESQUERDO
@@ -67,49 +100,50 @@ aba_notas_fiscais
             END
                 ${nomes}=    RPA.Tables.Get Table Row    ${tabela}    ${${linha}-${2}}
                 ${cont}=    Set Variable    1    
-                    FOR    ${nome}    IN    @{nomes}
-                        ${n_itens}=  RPA.EXCEL.FILES.Get Cell Value    ${cont}    B  #pega valor de numero de itens
-                        IF    '${nome}' == 'razao_social'
-                            ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
-                            ${conteudo}=    Convert To String    ${conteudo}
-                            digitar_numero_nf    ${conteudo}
-                            Repeat Keyword    5x    loops_for_VK_TAB
-                        END
-                        IF    '${nome}' == 'cond_cobranca'
-                            ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
-                            ${conteudo}=    Convert To String    ${conteudo}
-                            digitar_numero_nf    ${conteudo}
-                            Repeat Keyword    2x    loops_for_VK_TAB
-                        END
-                        # IF    '${nome}' == 'centro_custo_emit'
-                        #     ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
-                        #     ${conteudo}=    Convert To String    ${conteudo}
-                        #     digitar_numero_nf    ${conteudo}
-                        #     Repeat Keyword    2x    loops_for_VK_TAB
-                        # END
-                        # IF    '${nome}' == 'vendedor'
-                        #     ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
-                        #     ${conteudo}=    Convert To String    ${conteudo}
-                        #     digitar_numero_nf    ${conteudo}
-                        #     Send Keys To Input    {VK_TAB}    FALSE  0.0  0.0
-                        # END
-                        # IF    '${nome}' == 'cod_subgrupo'
-                        #     ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
-                        #     ${conteudo}=    Convert To String    ${conteudo}
-                        #     digitar_numero_nf    ${conteudo}
-                        #     Send Keys To Input    {VK_TAB}    FALSE  0.0  0.0
-                        # END
-                        # IF    '${nome}' == 'cfop'
-                        #     ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
-                        #     ${conteudo}=    Convert To String    ${conteudo}
-                        #     digitar_numero_nf    ${conteudo}
-                        # END
-                        # salvar
-                        # add_itens_nf
-                        # click_on_add_itens
-                        
-                        # ITENS_DA_NOTA_FISCAL
-                        RPA.Excel.Files.Set Active Worksheet  'nota_fiscais_itens'
+                FOR    ${nome}    IN    @{nomes}
+                    RPA.Excel.Files.Set Active Worksheet    nota_fiscal
+                    ${n_itens}=  RPA.EXCEL.FILES.Get Cell Value    ${${cont}+${1}}    B  #pega valor de numero de itens
+                    IF    '${nome}' == 'razao_social'
+                        ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
+                        ${conteudo}=    Convert To String    ${conteudo}
+                        digitar_numero_nf    ${conteudo}
+                        Repeat Keyword    5x    loops_for_VK_TAB
+                    END
+                    IF    '${nome}' == 'cond_cobranca'
+                        ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
+                        ${conteudo}=    Convert To String    ${conteudo}
+                        digitar_numero_nf    ${conteudo}
+                        Repeat Keyword    2x    loops_for_VK_TAB
+                    END
+                    # IF    '${nome}' == 'centro_custo_emit'
+                    #     ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
+                    #     ${conteudo}=    Convert To String    ${conteudo}
+                    #     digitar_numero_nf    ${conteudo}
+                    #     Repeat Keyword    2x    loops_for_VK_TAB
+                    # END
+                    # IF    '${nome}' == 'vendedor'
+                    #     ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
+                    #     ${conteudo}=    Convert To String    ${conteudo}
+                    #     digitar_numero_nf    ${conteudo}
+                    #     Send Keys To Input    {VK_TAB}    FALSE  0.0  0.0
+                    # END
+                    # IF    '${nome}' == 'cod_subgrupo'
+                    #     ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
+                    #     ${conteudo}=    Convert To String    ${conteudo}
+                    #     digitar_numero_nf    ${conteudo}
+                    #     Send Keys To Input    {VK_TAB}    FALSE  0.0  0.0
+                    # END
+                    # IF    '${nome}' == 'cfop'
+                    #     ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
+                    #     ${conteudo}=    Convert To String    ${conteudo}
+                    #     digitar_numero_nf    ${conteudo}
+                    # END
+                    # salvar
+                    # add_itens_nf
+                    # click_on_add_itens
+                    
+                    # ITENS_DA_NOTA_FISCAL
+                        RPA.Excel.Files.Set Active Worksheet   nota_fiscal_itens 
                         FOR    ${cont_linha}    IN RANGE    1    ${n_itens}                      
                             IF    '${nome}' == 'cod_servico'
                                 ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
@@ -176,10 +210,11 @@ aba_notas_fiscais
                             #     ${conteudo}=    Convert To String    ${conteudo}
                             #     digitar_numero_nf    ${conteudo}
                         END    # END                                                                                                                                                                                                             
-                     ${cont}=    Set Variable    ${${cont}+${1}}
-                   END
+                    ${cont_linha}=    Set Variable    ${${cont}+${1}}
                 END
-            END    
+            ${cont}=    Set Variable    ${${cont}+${1}}
+        END
+    END    
     # Save Workbook
     # Close Workbook
     Add heading    Rotina Finalizada!

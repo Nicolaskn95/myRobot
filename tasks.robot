@@ -25,10 +25,11 @@ Resource          keywords.robot
 
 *** Tasks ***
 criar_nf
-    ${arquivo}=    Coleta_Nome_do_Arquivo_Excel  
-    sleep  1s
-    # entrar_Notas_fiscais
-    aba_notas_fiscais    ${arquivo}
+    # ${arquivo}=    Coleta_Nome_do_Arquivo_Excel  
+    # sleep  1s
+    # # entrar_Notas_fiscais
+    # aba_notas_fiscais    ${arquivo}
+    aba_notas_fiscais2
 
     
 
