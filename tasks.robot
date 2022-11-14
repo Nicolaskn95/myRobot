@@ -27,9 +27,10 @@ Resource          keywords.robot
 criar_nf
     # ${arquivo}=    Coleta_Nome_do_Arquivo_Excel  
     # sleep  1s
-    # # entrar_Notas_fiscais
+    # entrar_Notas_fiscais
+    teste_notas_nf     #${arquivo}
     # aba_notas_fiscais    ${arquivo}
-    aba_notas_fiscais2
+    # aba_notas_fiscais2
 
     
 

@@ -11,6 +11,12 @@
         "source": null,
         "type": "image"
     },
+    "razao_social": {
+        "confidence": 77.0,
+        "path": ".images\\razao_social-path.png",
+        "source": null,
+        "type": "image"
+    },
     "sair": {
         "confidence": 80.0,
         "path": ".images\\sair-path.png",
