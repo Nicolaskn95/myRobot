@@ -9,11 +9,10 @@ tasks:
     robotTaskName: chooseProcess  
 
 
-
 condaConfigFile: conda.yaml
 artifactsDir: output
 PATH:
-  - .
+  -
 PYTHONPATH:
   - keywords
   - libraries

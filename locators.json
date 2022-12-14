@@ -11,6 +11,12 @@
         "source": null,
         "type": "image"
     },
+    "dados_adicionais_nf": {
+        "confidence": 80.0,
+        "path": ".images\\dados_adicionais_nf-path.png",
+        "source": null,
+        "type": "image"
+    },
     "razao_social": {
         "confidence": 77.0,
         "path": ".images\\razao_social-path.png",
@@ -26,6 +32,12 @@
     "salvar": {
         "confidence": 80.0,
         "path": ".images\\salvar-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "selecionar": {
+        "confidence": 80.0,
+        "path": ".images\\selecionar-path.png",
         "source": null,
         "type": "image"
     }

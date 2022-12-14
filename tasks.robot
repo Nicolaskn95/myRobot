@@ -28,7 +28,8 @@ criar_nf
     # ${arquivo}=    Coleta_Nome_do_Arquivo_Excel  
     # sleep  1s
     # entrar_Notas_fiscais
-    teste_notas_nf     #${arquivo}
+    add_nota_fiscal
+    # add_itens_da_nf
     # aba_notas_fiscais    ${arquivo}
     # aba_notas_fiscais2
 
