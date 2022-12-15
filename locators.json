@@ -11,6 +11,12 @@
         "source": null,
         "type": "image"
     },
+    "conferir_nf": {
+        "confidence": 80.0,
+        "path": ".images\\conferir_nf-path.png",
+        "source": null,
+        "type": "image"
+    },
     "dados_adicionais_nf": {
         "confidence": 80.0,
         "path": ".images\\dados_adicionais_nf-path.png",

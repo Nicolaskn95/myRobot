@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.9.13 on win32)" generated="20221117 08:21:36.222" rpa="false" schemaversion="2">
-<suite id="s1" name="Robot Interactive Console" source="c:\Users\nicolas\.vscode\extensions\robocorp.robotframework-lsp-1.5.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<robot generator="Robot 4.1 (Python 3.9.13 on win32)" generated="20221215 11:49:16.301" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\nicolas\.vscode\extensions\robocorp.robotframework-lsp-1.7.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<status status="PASS" starttime="20221117 08:21:41.557" endtime="20221117 08:21:49.097"/>
+<status status="PASS" starttime="20221215 11:49:16.556" endtime="20221215 11:49:24.284"/>
 </kw>
-<status status="PASS" starttime="20221117 08:21:41.557" endtime="20221117 08:21:49.097"/>
+<status status="PASS" starttime="20221215 11:49:16.556" endtime="20221215 11:49:24.284"/>
 </test>
-<status status="PASS" starttime="20221117 08:21:36.229" endtime="20221117 08:21:49.098"/>
+<status status="PASS" starttime="20221215 11:49:16.301" endtime="20221215 11:49:24.287"/>
 </suite>
 <statistics>
 <total>
