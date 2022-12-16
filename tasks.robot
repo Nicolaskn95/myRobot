@@ -30,7 +30,7 @@ criar_nf
     # entrar_Notas_fiscais
     # add_invoice
     # go_to_itens_nf
-    # add_itens_of_nf
+    add_itens_of_nf
     # go_to_obs_NF
     # add_obs_NF
     
