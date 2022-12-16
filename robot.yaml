@@ -8,7 +8,6 @@ tasks:
   Run chooseProcess:
     robotTaskName: chooseProcess  
 
-
 condaConfigFile: conda.yaml
 artifactsDir: output
 PATH:

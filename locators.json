@@ -23,8 +23,26 @@
         "source": null,
         "type": "image"
     },
+    "item": {
+        "confidence": 80.0,
+        "path": ".images\\item-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "nota_fiscal": {
+        "confidence": 80.0,
+        "path": ".images\\nota_fiscal-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "obs_nf": {
+        "confidence": 80.0,
+        "path": ".images\\obs_nf-path.png",
+        "source": null,
+        "type": "image"
+    },
     "razao_social": {
-        "confidence": 77.0,
+        "confidence": 80.0,
         "path": ".images\\razao_social-path.png",
         "source": null,
         "type": "image"

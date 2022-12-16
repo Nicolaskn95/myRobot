@@ -1,0 +1,51 @@
+robo Satis - faturamento
+- rotina criar NF 
+- preparacao nf fiscais servicos avulsos
+
+- aba_NOTA FISCAL: no arquivo excel possui numero de notas fiscais repetidos porcauso dos itens da NF, então para cada linha possui itens para sua respectiva NF
+	A logica: comparar a nota fiscal com a linha de cima, "SE nf for diferente nf_linha_acima então cria_nf, senão pula essa linha"
+
+	---CHECK---
+		
+- aba_ITENS NF: para inserir os itens o programa precisa voltar na aba nota fiscal e inserir o numero da NF e saber quando parar de inserir os dados dos itens
+daquela NF
+
+	A logica: a primeira logica da NF mas ele entrando no ELSE e continuando os passos no VERDADEIRO IF
+	
+- aba_VENCIMENTOS: DUVIDA no video ele cria a data automaticamente, sem necessidade de usar os valores do excel
+	A logica: N/A
+- aba_OBS NF
+	A logica: mesma logica para aba_NOTA FISCAL
+	
+- Enviar a NF eletronicamente
+	A logica: DUVIDA como saber qual NF eu enviarei automnaticamente
+	
+		DUVIDAS: 
+		- NOTA FISCAL:No campo dados adicionais ele irá apagar a data ou irá preencher?
+		-NOTA FISCAL: É necessario os campos com descrição no arquivo excel? Sendo que o Satis irá preencher sozinho
+		-VALOR BRUTO NF - ???
+		-ITENS NF: no campo codigo de tributaçaõ de serviço se eu colocar 003 a box de deudução ele fica desativada. o codigo 003 é tera casos que ele ira colocar		
+	
+	
+	
+	Cada linha da planilha corresponde a um item de serviço.  						
+Para nota com mais de um item de serviço está repetindo as colunas Código do Cliente, Grupo, CNPJ,Razão Social, CFOP, Cond.Cobrança, CC Emitente, Compet.Gerencial,Cód.Subgrupo,Observação Geral da Nota.						
+A busca pelo cliente será feita pelo CNPJ ou Código						
+"Aguardando resposta do Osvaldo em relação ao vencimento: 
+- Será gerado pela Condição de Cobrança o você prefere deixar informado na planilha?
+- É sempre um vencimento para cada nota?"						
+
+	
+	
+	
+	
+	000000022000000023000000024
+		00001	5	00002	10	
+		00001	5	00002	10
+		00001	5	00002	10
+		00001	5	00002	10	00003	V_00004	V_00005	13	00006	V_00007	15	00008	V_
+		00001	5	00002	10	00003	V_11	V_00004 V_12	V_00005 13	00006	V_14	V_0000715	00008	V_16	V_
+		00001	5	100.56													001	001001	0000000100 00002	10	101.56													002	001001	0000000100
+		00001	5	100.56													001	001001	000000010000002	10	101.56													002	001001	
+		00001	5	100.56													001	002		001
+		00001	5	100.56													001	001002		000000010000002	10	101.56						

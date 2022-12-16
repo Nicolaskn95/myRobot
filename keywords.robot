@@ -27,6 +27,7 @@ ${index}=    0
 ${cont}=    0
 ${contador_coluna}=    0
 ${linha_abaixo}=    1
+${PRINT}=    V_ 
 *** Keywords ***
 
 entrar_Notas_fiscais
@@ -58,7 +59,7 @@ Coleta_Nome_do_Arquivo_Excel
     ${result}=    Run dialog
     [Return]    ${result.fileupload}[0]
 
-add_invoice  #IT WORKS!!!
+add_invoice  #IT WORKS!!! --TEST PASS--
     ${arquivo}=  Set Variable  C:${/}Users${/}nicolas${/}robots${/}CriarNFSatisFaturamento${/}DataInput.xlsx
     RPA.Excel.Files.Open Workbook    ${arquivo}
     ${table}=    Read Worksheet As Table    header=True
@@ -89,32 +90,31 @@ add_invoice  #IT WORKS!!!
                             ...                                             .
                             ...                                             -
                         click_on_add_itens
-                            sleep  1s
-                            input_cnpj
-                            sleep  1s      
-                            digitar_numero    ${conteudo}
-                            sleep  1s
-                            press_selecionar
-                            sleep  1s
-                            Repeat Keyword    5x    loops_for_VK_TAB                        
+                        input_cnpj   
+                        sleep  1s                           
+                        digitar_numero    ${conteudo}     
+                        Send Keys To Input    {ENTER}    FALSE    0.2  0.0
+                        press_selecionar
+                        Repeat Keyword    5x    loops_for_VK_TAB                        
                         END
                         IF    '${nome}' == 'cond_cobranca'
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
                             ${conteudo}=    Convert To String    ${conteudo}
                             digitar_numero    ${conteudo}
+                            Sleep    0.5s
                             Repeat Keyword    2x    loops_for_VK_TAB
                         END
                         IF    '${nome}' == 'centro_custo_emit'
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
                             ${conteudo}=    Convert To String    ${conteudo}
                             digitar_numero    ${conteudo}
-                            Repeat Keyword    2x    loops_for_VK_TAB
+                            Repeat Keyword    3x    loops_for_VK_TAB
                         END  
-                        # # IF    '${nome}' == 'vendedor'
-                        # #     ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${${linha}+${n_itens}}    ${cont}  
-                        # #     ${conteudo}=    Convert To String    ${conteudo}
-                        # #     digitar_numero    ${conteudo}
-                         Repeat Keyword    3x    loops_for_VK_TAB
+                        # #  IF    '${nome}' == 'vendedor'
+                        # #      ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${${linha}+${n_itens}}    ${cont}  
+                        # #      ${conteudo}=    Convert To String    ${conteudo}
+                        # #      digitar_numero    ${conteudo}
+                        # # Repeat Keyword    3x    loops_for_VK_TAB
                         IF  '${nome}' == 'cod_subgrupo'
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
                             ${conteudo}=    Convert To String    ${conteudo}
@@ -125,8 +125,8 @@ add_invoice  #IT WORKS!!!
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}  
                             ${conteudo}=    Convert To String    ${conteudo}
                             digitar_numero    ${conteudo}
-                        #  salvar
-                        #  dados_adicionais_NF
+                         salvar
+                         dados_adicionais_NF
                         END
                          ${cont}=    Set Variable    ${${cont}+${1}}
                     END                             
@@ -160,35 +160,80 @@ add_itens_of_nf  #IT WORKS!!!
             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}                    
              # ${n_itens}=    Set Global Variable   ${n_itens}
              #${n_itens}=  RPA.EXCEL.FILES.Get Cell Value    ${linha}    B  #pega valor de numero de itens
-                  
                 IF    '${conteudo}' != '${nf_compare}'
                     FOR    ${nome}    IN    @{nomes}
                         IF    '${nome}' == 'cod_servico'
+                            click_on_add_itens                        
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
                             ${conteudo}=    Convert To String    ${conteudo}
                             digitar_numero    ${conteudo}
                             # Repeat Keyword    5x    loops_for_VK_TAB  #CERTO              
                             Repeat Keyword    1x    loops_for_VK_TAB  #ERRADO {PARA TESTES} 
+                            Send Keys To Input    ${PRINT}    FALSE    0.2  0.2
                         END
-                         ${cont}=    Set Variable    ${${cont}+${1}}
-                         salvar
-                         sair
-                         conferir
-                         go_to_NF
-                         Send Keys To Input    {SHIFT}+{TAB}    FALSE    0.2  0.0
-                         ${NF_dos_itens_linhaAbaixo}=    RPA.Excel.Files.Get Cell Value    ${${linha}+${linha_abaixo}}    A
-                         digitar_numero    ${NF_dos_itens_linhaAbaixo}
-                         Send Keys To Input    {ENTER}    FALSE    0.2  0.0
-                         go_to_itens_nf
-                    END
-                ELSE
-                    FOR    ${nome}    IN    @{nomes}     
-                        click_on_add_itens
-                        # ${linha}=    Set Variable    ${${linha}+${1}}
-                        IF    '${nome}' == 'cod_servico'
+                        IF    '${nome}' == 'quantidade'
+                            ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
+                            ${conteudo}=    Convert To String    ${conteudo}
+                            digitar_numero    ${conteudo}
+                            Repeat Keyword    1x    loops_for_VK_TAB
+                            Send Keys To Input    ${PRINT}    FALSE    0.2  0.2                            
+                        END
+                        IF    '${nome}' == 'valor_unit_moeda'
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
                             ${conteudo}=    Convert To String    ${conteudo}
                             digitar_numero   ${conteudo}            
+                            Repeat Keyword    13x    loops_for_VK_TAB                                 
+                        END                                           
+                        IF    '${nome}' == 'cod_tibut_servico'
+                            ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
+                            ${conteudo}=    Convert To String    ${conteudo}
+                            digitar_numero   ${conteudo}            
+                            Repeat Keyword    1x    loops_for_VK_TAB                                 
+                        END
+                        IF    '${nome}' == 'mun_prest_serv'
+                            ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
+                            ${conteudo}=    Convert To String    ${conteudo}
+                            digitar_numero   ${conteudo}          
+                            Repeat Keyword    1x    loops_for_VK_TAB                                 
+                        END
+                        IF    '${nome}' == 'tipo_serv'
+                            ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
+                            ${conteudo}=    Convert To String    ${conteudo}
+                            digitar_numero   ${conteudo}            
+                            Repeat Keyword    2x    loops_for_VK_TAB                                 
+                        END                        
+                        IF    '${nome}' == 'centro_custo'
+                            ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
+                            ${conteudo}=    Convert To String    ${conteudo}
+                            digitar_numero   ${conteudo}            
+                            # Repeat Keyword    3x    loops_for_VK_TAB                                             
+                         salvar
+                         Sleep    1s
+                         sair
+                         wait_until_appear_itens
+                         sleep  1s
+                         conferir
+                         sleep  1s
+                         go_to_NF
+                         sleep  1s
+                         Send Keys To Input    {VK_SHIFT}+{TAB}    FALSE    0.2  0.0
+                         ${NF_dos_itens_linhaAbaixo}=    RPA.Excel.Files.Get Cell Value    ${${linha}+${linha_abaixo}}    A
+                         sleep  1s
+                         digitar_numero    ${NF_dos_itens_linhaAbaixo}
+                         Send Keys To Input    {ENTER}    FALSE    0.2  0.0
+                         go_to_itens_nf
+                        END                                                      
+                         ${cont}=    Set Variable    ${${cont}+${1}}
+                    END
+                ELSE
+                    FOR    ${nome}    IN    @{nomes}     
+                        # sleep    5s
+                        IF    '${nome}' == 'cod_servico'
+                         click_on_add_itens
+                            ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
+                            ${conteudo}=    Convert To String    ${conteudo}
+                            digitar_numero   ${conteudo}
+                            # Type Text    ${conteudo}
                             Repeat Keyword    1x    loops_for_VK_TAB
                         END    
                         IF    '${nome}' == 'quantidade'
@@ -197,51 +242,68 @@ add_itens_of_nf  #IT WORKS!!!
                             digitar_numero    ${conteudo}
                             Repeat Keyword    1x    loops_for_VK_TAB
                         END                
-                        IF    ${nome} == 'valor_unit_moeda'
+                        IF    '${nome}' == 'valor_unit_moeda'
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
                             ${conteudo}=    Convert To String    ${conteudo}
                             digitar_numero   ${conteudo}            
                             Repeat Keyword    13x    loops_for_VK_TAB                                 
                         END                                           
-                        IF    ${nome} == 'cod_tribut'
+                        IF    '${nome}' == 'cod_tibut_servico'
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
                             ${conteudo}=    Convert To String    ${conteudo}
                             digitar_numero   ${conteudo}            
                             Repeat Keyword    1x    loops_for_VK_TAB                                 
                         END
-                        IF    ${nome} == 'mun_prest_serv'
+                        IF    '${nome}' == 'mun_prest_serv'
+                            ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
+                            ${conteudo}=    Convert To String    ${conteudo}
+                            digitar_numero   ${conteudo}          
+                            Repeat Keyword    1x    loops_for_VK_TAB                                 
+                        END
+                        IF    '${nome}' == 'tipo_serv'
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
                             ${conteudo}=    Convert To String    ${conteudo}
                             digitar_numero   ${conteudo}            
-                            Repeat Keyword    3x    loops_for_VK_TAB                                 
-                        END
-                        IF    ${nome} == 'centro_custo'
+                            Repeat Keyword    2x    loops_for_VK_TAB                                 
+                        END                        
+                        IF    '${nome}' == 'centro_custo'
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
                             ${conteudo}=    Convert To String    ${conteudo}
                             digitar_numero   ${conteudo}            
                             # Repeat Keyword    3x    loops_for_VK_TAB                                 
+                         salvar               
                         END                                                                      
-                      #final_nome_in_nome
-                        salvar               
                         ${cont}=    Set Variable    ${${cont}+${1}}
                     END
                 END       
         END  #for_colunas
     END  #for_linhas
-
+add_obs_NF
+    
 conferir
     RPA.Desktop.Wait For Element    alias:conferir_nf    
     ${region}=    RPA.Desktop.Find Element    alias:conferir_nf
     RPA.Desktop.Move Mouse    ${region}
     RPA.Desktop.Click
+wait_until_appear_itens
+    RPA.Desktop.Wait For Element    alias:item
 go_to_NF
-
+    RPA.Desktop.Wait For Element    alias:nota_fiscal    
+    ${region}=    RPA.Desktop.Find Element    alias:nota_fiscal
+    RPA.Desktop.Move Mouse    ${region}
+    RPA.Desktop.Click
+    RPA.Desktop.Click
+    RPA.Desktop.Click
 sair
     RPA.Desktop.Wait For Element    alias:sair    
     ${region}=    RPA.Desktop.Find Element    alias:sair
     RPA.Desktop.Move Mouse    ${region}
     RPA.Desktop.Click
-
+go_to_obs_NF
+    RPA.Desktop.Wait For Element    alias:obs_nf    
+    ${region}=    RPA.Desktop.Find Element    alias:obs_nf
+    RPA.Desktop.Move Mouse    ${region}
+    RPA.Desktop.Click
 go_to_itens_nf
     RPA.Desktop.Wait For Element    alias:aba_itens_nf    
     ${region}=    RPA.Desktop.Find Element    alias:aba_itens_nf
@@ -272,8 +334,8 @@ aba_itens_nf
     RPA.Desktop.Click 
 digitar_numero
     [Arguments]  ${conteudo}  
-    RPA.Desktop.Type Text  ${conteudo}
     sleep  0.5s
+    RPA.Desktop.Type Text  ${conteudo}
 salvar
     RPA.Desktop.Wait For Element    alias:salvar  
     ${region}=    RPA.Desktop.Find Element    alias:salvar
@@ -284,9 +346,9 @@ dados_adicionais_NF
     ${region}=    RPA.Desktop.Find Element    alias:dados_adicionais_nf
     RPA.Desktop.Move Mouse    ${region}
     RPA.Desktop.Click
-    Send Keys To Input    {VK_DELETE}    FALSE    0.0   0.2
-    Send Keys To Input    {VK_TAB}    FALSE    0.0   0.2
-    Send Keys To Input    {VK_ENTER}    FALSE    0.0   0.2
+    Send Keys To Input    {VK_DELETE}    FALSE    0.2   0.2
+    Send Keys To Input    {VK_TAB}    FALSE    0.2   0.2
+    Send Keys To Input    {ENTER}    FALSE    0.2   0.2
         
 
 
