@@ -11,6 +11,12 @@
         "source": null,
         "type": "image"
     },
+    "button_back": {
+        "confidence": 100.0,
+        "path": ".images\\button_back-path.png",
+        "source": null,
+        "type": "image"
+    },
     "conferir_nf": {
         "confidence": 80.0,
         "path": ".images\\conferir_nf-path.png",
@@ -20,6 +26,18 @@
     "dados_adicionais_nf": {
         "confidence": 80.0,
         "path": ".images\\dados_adicionais_nf-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "deducao_iss_off": {
+        "confidence": 80.0,
+        "path": ".images\\deducao_iss_off-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "deducao_iss_on": {
+        "confidence": 80.0,
+        "path": ".images\\deducao_iss_on-path.png",
         "source": null,
         "type": "image"
     },
