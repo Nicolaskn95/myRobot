@@ -1,5 +1,5 @@
 *** Settings ***
-DOCUMENTATION    Criar NF e enviar
+DOCUMENTATION    Criar NF
 
 Library           Collections
 #Library           RPA.Browser.Selenium
@@ -20,10 +20,19 @@ Library           RPA.FileSystem
 Library           String
 Library           RPA.HTTP
 Library           DateTime
+Library           test_executable
 Resource          keywords.robot
-# Library           test_executable.py
 *** Tasks ***
-criar_nf
+interface
+    ${var1}=    hello
+    IF    ${var1} == '1'
+        log    TRUE
+    ELSE
+        log    FALSE
+        # Open Executable    executable    windowtitle
+    END
+
+criar_nf    ${choose}
     ${arquivo}=    Coleta_Nome_do_Arquivo_Excel  
     sleep  1s
     go_to_invoice

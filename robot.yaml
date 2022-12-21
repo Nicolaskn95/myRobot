@@ -5,6 +5,9 @@ tasks:
   Run criar_nf:
     robotTaskName: criar_nf
 
+  Run interface:
+    robotTaskName: interface
+
   Run chooseProcess:
     robotTaskName: chooseProcess  
 
