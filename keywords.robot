@@ -21,29 +21,22 @@ Library           DateTime
 
 
 *** Variables ***  
-${contador_linha}=    0
-${linha_acima}=    1
-${index}=    0
-${cont}=    0
-${contador_coluna}=    0
-${linha_abaixo}=    1
-${PRINT}=    V_ 
+${linha_acima}=       1
+${cont}=              0
+${contador_coluna}=   0
+${linha_abaixo}=      1
 ${count_first_nf}=    0
 *** Keywords ***
 
-entrar_Notas_fiscais
+go_to_invoice
     # Send Keys To Input    {VK_MENU}    FALSE    
     Send Keys To Input    {VK_MENU}    FALSE   0.0    0.0   
     Send Keys To Input    {VK_RIGHT}    FALSE  0.0    0.0   
     Send Keys To Input    {VK_RIGHT}    FALSE  0.0    0.0   
     Send Keys To Input    {VK_RIGHT}    FALSE  0.0    0.0   
     Send Keys To Input    {VK_RIGHT}    FALSE  0.0    0.0  
-    Repeat Keyword    16x    loops_for_VK_DOWN
-    Send Keys To Input    {ENTER}    FALSE
-    RPA.Desktop.Wait For Element    alias:add    
-    ${region}=    RPA.Desktop.Find Element    alias:add
-    RPA.Desktop.Move Mouse    ${region}
-    RPA.Desktop.Click  
+    Repeat Keyword    14x    loops_for_VK_DOWN
+    Send Keys To Input    {ENTER}    FALSE  0.0    0.0
 
 loops_for_VK_DOWN
     Send Keys To Input    {VK_DOWN}    FALSE  0.0  0.0
@@ -60,8 +53,10 @@ Coleta_Nome_do_Arquivo_Excel
     ${result}=    Run dialog
     [Return]    ${result.fileupload}[0]
 
+
 add_invoice  #IT WORKS!!! --TEST PASS--
-    ${arquivo}=  Set Variable  C:${/}Users${/}nicolas${/}robots${/}CriarNFSatisFaturamento${/}DataInput.xlsx
+    [Arguments]    ${arquivo}
+    # ${arquivo}=  Set Variable  C:${/}Users${/}nicolas${/}robots${/}CriarNFSatisFaturamento${/}DataInput.xlsx
     RPA.Excel.Files.Open Workbook    ${arquivo}
     ${table}=    Read Worksheet As Table    header=True
     ${testess}=    RPA.Tables.Get Table Row    ${table}    0
@@ -79,8 +74,7 @@ add_invoice  #IT WORKS!!! --TEST PASS--
                 ${nomes}=    RPA.Tables.Get Table Row    ${tabela}    ${${linha}-${2}}
                 ${cont}=    Set Variable    1
                 ${nf_compare}=    RPA.Excel.Files.Get Cell Value    ${${linha}-${linha_acima}}    ${1}
-                ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}
-                #  ${n_itens}=    Set Global Variable   ${n_itens}
+                ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}             
                 IF    '${conteudo}' != '${nf_compare}'
                     FOR    ${nome}    IN    @{nomes}
                         IF    '${nome}' == 'cnpj'  # IRÁ SER O POSICIONADOR DA COLUNA
@@ -127,7 +121,7 @@ add_invoice  #IT WORKS!!! --TEST PASS--
                             digitar_conteudo    ${conteudo}
                             dados_adicionais_NF
                             salvar
-                            ${count_first_nf}=    Set Variable    ${${count_first_nf}+${1}}
+                            ${count_first_nf}=    Set Variable   ${${count_first_nf}+${1}}
                         END
                         # IF  '${nome}' == 'dados_adicionais'
                         #  dados_adicionais_NF
@@ -147,10 +141,13 @@ add_invoice  #IT WORKS!!! --TEST PASS--
                 END  #final_if_nome
         END             
     END  #final_for_linha
-    choose_the_first_NF    ${count_first_nf}
+    ${get_first_nf}=    RPA.Excel.Files.Get Cell Value    2    A
+    Set Global Variable    ${get_first_nf}
+    choose_the_first_NF    ${get_first_nf}
 
 add_itens_of_nf  #IT WORKS!!!
-    ${arquivo}=  Set Variable  C:${/}Users${/}nicolas${/}robots${/}CriarNFSatisFaturamento${/}DataInput.xlsx
+    [Arguments]    ${arquivo}
+    # ${arquivo}=  Set Variable  C:${/}Users${/}nicolas${/}robots${/}CriarNFSatisFaturamento${/}DataInput.xlsx
     RPA.Excel.Files.Open Workbook    ${arquivo} 
     ${table}=    Read Worksheet As Table    header=True
     ${testess}=    RPA.Tables.Get Table Row    ${table}    0
@@ -170,8 +167,7 @@ add_itens_of_nf  #IT WORKS!!!
             ${nomes}=    RPA.Tables.Get Table Row    ${tabela}    ${${linha}-${2}}
             ${cont}=    Set Variable    1
             ${nf_compare}=    RPA.Excel.Files.Get Cell Value    ${${linha}+${linha_abaixo}}    ${1}
-            ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}                    
-             # ${n_itens}=    Set Global Variable   ${n_itens}
+            ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}
              #${n_itens}=  RPA.EXCEL.FILES.Get Cell Value    ${linha}    B  #pega valor de numero de itens
                 IF    '${conteudo}' != '${nf_compare}'
                     FOR    ${nome}    IN    @{nomes}
@@ -222,29 +218,39 @@ add_itens_of_nf  #IT WORKS!!!
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
                             ${conteudo}=    Convert To String    ${conteudo}
                             digitar_conteudo   ${conteudo}            
-                            # Repeat Keyword    3x    loops_for_VK_TAB                                             
-                         salvar
-                         sair
-                         wait_until_appear_itens
-                         sleep  0.5s
-                         conferir
-                         sleep  0.5s
-                         go_to_NF
-                         sleep  1s
-                         Send Keys To Input    {VK_SHIFT}+{TAB}    FALSE    0.2  0.0
-                         ${NF_dos_itens_linhaAbaixo}=    RPA.Excel.Files.Get Cell Value    ${${linha}+${linha_abaixo}}    A
-                         sleep  1s
-                         digitar_conteudo    ${NF_dos_itens_linhaAbaixo}
-                         Send Keys To Input    {ENTER}    FALSE    0.2  0.0
-                         go_to_itens_nf
-                        END                                                      
+                            # Repeat Keyword    3x    loops_for_VK_TAB
+                            Log    ${nf_compare}                                             
+                         IF    '${nf_compare}' != 'None'
+                          salvar
+                          sair
+                          wait_until_appear_itens
+                          conferir
+                          sleep  0.5s
+                          go_to_NF
+                          sleep  0.5s
+                          Send Keys To Input    {VK_SHIFT}+{TAB}    FALSE    0.2  0.0
+                          ${NF_dos_itens_linhaAbaixo}=    RPA.Excel.Files.Get Cell Value    ${${linha}+${linha_abaixo}}    A
+                          sleep  1s
+                          digitar_conteudo    ${NF_dos_itens_linhaAbaixo}
+                          Send Keys To Input    {ENTER}    FALSE    0.2  0.0
+                          go_to_itens_nf
+                         ELSE
+                          salvar
+                          sair
+                          wait_until_appear_itens
+                          conferir
+                          sleep  0.5s
+                          ${get_first_nf}=    RPA.Excel.Files.Get Cell Value    2    A
+                          Set Global Variable    ${get_first_nf}    
+                          choose_the_first_NF    ${get_first_nf}    
+                         END
+                        END
                          ${cont}=    Set Variable    ${${cont}+${1}}
                     END
                 ELSE
                     FOR    ${nome}    IN    @{nomes}     
                         # sleep    5s
                         IF    '${nome}' == 'cod_servico'
-
                             click_on_add_itens
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
                             ${conteudo}=    Convert To String    ${conteudo}
@@ -280,13 +286,13 @@ add_itens_of_nf  #IT WORKS!!!
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
                             ${conteudo}=    Convert To String    ${conteudo}
                             digitar_conteudo   ${conteudo}            
-                                ${elements}=    RPA.Desktop.Find Elements    alias:deducao_iss_off
-                                ${find}=    Get Length    ${elements}                                                        
-                                IF   ${find} > 0
-                                    Repeat Keyword    2x    loops_for_VK_TAB
-                                ELSE
-                                    Repeat Keyword    3x    loops_for_VK_TAB 
-                                END            
+                            ${elements}=    RPA.Desktop.Find Elements    alias:deducao_iss_off
+                            ${find}=    Get Length    ${elements}                                                        
+                            IF   ${find} > 0
+                                Repeat Keyword    2x    loops_for_VK_TAB
+                            ELSE
+                                Repeat Keyword    3x    loops_for_VK_TAB 
+                            END            
                         END
                         IF    '${nome}' == 'centro_custo'
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont} 
@@ -301,7 +307,8 @@ add_itens_of_nf  #IT WORKS!!!
         END  #for_colunas
     END  #for_linhas
 add_obs_NF
-    ${arquivo}=  Set Variable  C:${/}Users${/}nicolas${/}robots${/}CriarNFSatisFaturamento${/}DataInput.xlsx
+    [Arguments]    ${arquivo}
+    # ${arquivo}=  Set Variable  C:${/}Users${/}nicolas${/}robots${/}CriarNFSatisFaturamento${/}DataInput.xlsx
     RPA.Excel.Files.Open Workbook    ${arquivo}
     ${table}=    Read Worksheet As Table    header=True
     ${testess}=    RPA.Tables.Get Table Row    ${table}    0
@@ -331,29 +338,36 @@ add_obs_NF
                             digitar_conteudo  ${conteudo}
                             salvar
                             conferir
+                         IF    '${nf_compare}' != 'None'   
                          go_to_NF
-                         sleep  1s
+                         sleep  0.5s
                          Send Keys To Input    {VK_SHIFT}+{TAB}    FALSE    0.2  0.0
                          ${NF_dos_itens_linhaAbaixo}=    RPA.Excel.Files.Get Cell Value    ${${linha}+${linha_abaixo}}    A
-                         sleep  1s
+                         sleep  0.5s
                          digitar_conteudo    ${NF_dos_itens_linhaAbaixo}
-                         Send Keys To Input    {ENTER}    FALSE    0.2  0.0 
-                         go_to_obs_NF                   
+                         Send Keys To Input    {ENTER}    FALSE    0.2  0.0
+                         go_to_obs_NF
+                         ELSE
+                         Exit For Loop
+                         END
                         END
                          ${cont}=    Set Variable    ${${cont}+${1}}
-                    END                             
+                    END
                 ELSE
-                ${linha}=    Set Variable    ${${linha}+${1}}                      
+                 ${linha}=    Set Variable    ${${linha}+${1}}
                 END  #final_if_nome
-        END             
+        END
     END  #final_for_linha
+    Add heading    Rotina Finalizada!
 
 choose_the_first_NF
-    [Arguments]    ${cont}
-    RPA.Desktop.Wait For Element    alias:button_back    
-    ${region}=    RPA.Desktop.Find Element    alias:button_back
-    RPA.Desktop.Move Mouse    ${region}
-    Repeat Keyword    ${${cont}-${1}}    click_mouse
+    [Arguments]    ${get_first_nf}
+    go_to_NF
+    Send Keys To Input    {VK_SHIFT}+{VK_TAB}    FALSE    0.1  0.0
+    Log    ${get_first_nf}
+    RPA.Desktop.Type Text    ${get_first_nf}
+    Send Keys To Input    {ENTER}    FALSE       0.0  0.0
+
 click_mouse
     RPA.Desktop.Click    
 conferir

@@ -20,19 +20,18 @@ Library           RPA.FileSystem
 Library           String
 Library           RPA.HTTP
 Library           DateTime
-
 Resource          keywords.robot
-
+# Library           test_executable.py
 *** Tasks ***
 criar_nf
-    # ${arquivo}=    Coleta_Nome_do_Arquivo_Excel  
-    # sleep  1s
-    # entrar_Notas_fiscais
-    add_invoice
+    ${arquivo}=    Coleta_Nome_do_Arquivo_Excel  
+    sleep  1s
+    go_to_invoice
+    add_invoice    ${arquivo}
     go_to_itens_nf
-    add_itens_of_nf
-    # go_to_obs_NF
-    # add_obs_NF
+    add_itens_of_nf    ${arquivo}
+    go_to_obs_NF
+    add_obs_NF    ${arquivo}
     
 
     
