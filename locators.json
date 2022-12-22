@@ -11,6 +11,18 @@
         "source": null,
         "type": "image"
     },
+    "btn_back": {
+        "confidence": 83.0,
+        "path": ".images\\btn_back-path.png",
+        "source": null,
+        "type": "image"
+    },
+    "btn_next": {
+        "confidence": 81.0,
+        "path": ".images\\btn_next-path.png",
+        "source": null,
+        "type": "image"
+    },
     "button_back": {
         "confidence": 100.0,
         "path": ".images\\button_back-path.png",

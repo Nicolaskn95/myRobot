@@ -121,7 +121,8 @@ add_invoice  #IT WORKS!!! --TEST PASS--
                             digitar_conteudo    ${conteudo}
                             dados_adicionais_NF
                             salvar
-                            ${count_first_nf}=    Set Variable   ${${count_first_nf}+${1}}
+                            ${count_first_nf}=  Set Variable  ${${count_first_nf}+${1}}
+                            Set Global Variable    ${count_first_nf}
                         END
                         # IF  '${nome}' == 'dados_adicionais'
                         #  dados_adicionais_NF
@@ -141,9 +142,10 @@ add_invoice  #IT WORKS!!! --TEST PASS--
                 END  #final_if_nome
         END             
     END  #final_for_linha
-    ${get_first_nf}=    RPA.Excel.Files.Get Cell Value    2    A
-    Set Global Variable    ${get_first_nf}
-    choose_the_first_NF    ${get_first_nf}
+    choose_the_first_NF_btn_back    ${count_first_nf}
+    # ${get_first_nf}=    RPA.Excel.Files.Get Cell Value    2    A
+    # Set Global Variable    ${get_first_nf}
+    # choose_the_first_NF    ${get_first_nf}
 
 add_itens_of_nf  #IT WORKS!!!
     [Arguments]    ${arquivo}
@@ -226,13 +228,14 @@ add_itens_of_nf  #IT WORKS!!!
                           wait_until_appear_itens
                           conferir
                           sleep  0.5s
-                          go_to_NF
-                          sleep  0.5s
-                          Send Keys To Input    {VK_SHIFT}+{TAB}    FALSE    0.2  0.0
-                          ${NF_dos_itens_linhaAbaixo}=    RPA.Excel.Files.Get Cell Value    ${${linha}+${linha_abaixo}}    A
-                          sleep  1s
-                          digitar_conteudo    ${NF_dos_itens_linhaAbaixo}
-                          Send Keys To Input    {ENTER}    FALSE    0.2  0.0
+                        #   go_to_NF
+                         choose_the_first_NF_btn_next
+                        #   sleep  0.5s
+                        #   Send Keys To Input    {VK_SHIFT}+{TAB}    FALSE    0.2  0.0
+                        #   ${NF_dos_itens_linhaAbaixo}=    RPA.Excel.Files.Get Cell Value    ${${linha}+${linha_abaixo}}    A
+                        #   sleep  1s
+                        #   digitar_conteudo    ${NF_dos_itens_linhaAbaixo}
+                        #   Send Keys To Input    {ENTER}    FALSE    0.2  0.0
                           go_to_itens_nf
                          ELSE
                           salvar
@@ -240,9 +243,10 @@ add_itens_of_nf  #IT WORKS!!!
                           wait_until_appear_itens
                           conferir
                           sleep  0.5s
-                          ${get_first_nf}=    RPA.Excel.Files.Get Cell Value    2    A
-                          Set Global Variable    ${get_first_nf}    
-                          choose_the_first_NF    ${get_first_nf}    
+                          choose_the_first_NF_btn_back    ${count_first_nf}
+                        #   ${get_first_nf}=    RPA.Excel.Files.Get Cell Value    2    A
+                        #   Set Global Variable    ${get_first_nf}    
+                        #   choose_the_first_NF    ${get_first_nf}    
                          END
                         END
                          ${cont}=    Set Variable    ${${cont}+${1}}
@@ -332,22 +336,26 @@ add_obs_NF
                 IF    '${conteudo}' != '${nf_compare}'
                     FOR    ${nome}    IN    @{nomes} 
                         IF    '${nome}' == 'obs_geral_nota'  # IRÁ SER O POSICIONADOR DA COLUNA
-                            Send Keys To Input    {VK_TAB}    FALSE    0.0  0.0
+                            # Send Keys To Input    {VK_TAB}    FALSE    0.0  0.0
                             ${conteudo}=    RPA.Excel.Files.Get Cell Value    ${linha}    ${cont}
                             ${conteudo}=    Convert To String    ${conteudo}
                             digitar_conteudo  ${conteudo}
                             salvar
                             conferir
                          IF    '${nf_compare}' != 'None'   
-                         go_to_NF
-                         sleep  0.5s
-                         Send Keys To Input    {VK_SHIFT}+{TAB}    FALSE    0.2  0.0
-                         ${NF_dos_itens_linhaAbaixo}=    RPA.Excel.Files.Get Cell Value    ${${linha}+${linha_abaixo}}    A
-                         sleep  0.5s
-                         digitar_conteudo    ${NF_dos_itens_linhaAbaixo}
-                         Send Keys To Input    {ENTER}    FALSE    0.2  0.0
+                        #  go_to_NF
+                        
+                         choose_the_first_NF_btn_next
                          go_to_obs_NF
+                        #  sleep  0.5s
+                        #  Send Keys To Input    {VK_SHIFT}+{TAB}    FALSE    0.2  0.0
+                        #  ${NF_dos_itens_linhaAbaixo}=    RPA.Excel.Files.Get Cell Value    ${${linha}+${linha_abaixo}}    A
+                        #  sleep  0.5s
+                        #  digitar_conteudo    ${NF_dos_itens_linhaAbaixo}
+                        #  Send Keys To Input    {ENTER}    FALSE    0.2  0.0
+                        #  go_to_obs_NF
                          ELSE
+                         Add heading    Rotina Finalizada!
                          Exit For Loop
                          END
                         END
@@ -358,7 +366,7 @@ add_obs_NF
                 END  #final_if_nome
         END
     END  #final_for_linha
-    Add heading    Rotina Finalizada!
+   
 
 choose_the_first_NF
     [Arguments]    ${get_first_nf}
@@ -367,9 +375,22 @@ choose_the_first_NF
     Log    ${get_first_nf}
     RPA.Desktop.Type Text    ${get_first_nf}
     Send Keys To Input    {ENTER}    FALSE       0.0  0.0
-
+choose_the_first_NF_btn_back
+    [Arguments]    ${count_first_nf}
+    go_to_NF   
+    RPA.Desktop.Wait For Element    alias:btn_back    
+    ${region}=    RPA.Desktop.Find Element    alias:btn_back
+    RPA.Desktop.Move Mouse    ${region}
+    Repeat Keyword    ${${count_first_nf}-${1}}    click_mouse
+choose_the_first_NF_btn_next
+    [Arguments]
+    go_to_NF   
+    RPA.Desktop.Wait For Element    alias:btn_next    
+    ${region}=    RPA.Desktop.Find Element    alias:btn_next
+    RPA.Desktop.Move Mouse    ${region}
+    Repeat Keyword    1x    click_mouse        
 click_mouse
-    RPA.Desktop.Click    
+    RPA.Desktop.Click
 conferir
     RPA.Desktop.Wait For Element    alias:conferir_nf    
     ${region}=    RPA.Desktop.Find Element    alias:conferir_nf
@@ -394,6 +415,10 @@ go_to_obs_NF
     ${region}=    RPA.Desktop.Find Element    alias:obs_nf
     RPA.Desktop.Move Mouse    ${region}
     RPA.Desktop.Click
+    RPA.Desktop.Click
+    RPA.Desktop.Click
+    Send Keys To Input    {VK_TAB}    FALSE    0.2  0.0
+    Send Keys To Input    {VK_TAB}    FALSE    0.2  0.0    
 go_to_itens_nf
     RPA.Desktop.Wait For Element    alias:aba_itens_nf    
     ${region}=    RPA.Desktop.Find Element    alias:aba_itens_nf

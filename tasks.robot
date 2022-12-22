@@ -20,19 +20,26 @@ Library           RPA.FileSystem
 Library           String
 Library           RPA.HTTP
 Library           DateTime
-Library           test_executable
+# Suite Setup       TDD_return_value.py 
+# Library           TDD_return_value.py
 Resource          keywords.robot
-*** Tasks ***
-interface
-    ${var1}=    hello
-    IF    ${var1} == '1'
-        log    TRUE
-    ELSE
-        log    FALSE
-        # Open Executable    executable    windowtitle
-    END
 
-criar_nf    ${choose}
+*** Variables ***
+
+*** Tasks ***
+# interface
+#     Add heading       Escolha o robo
+#     Add radio buttons    name=options    options=criar_nota_fiscal,robo_teste  label=robos
+#     ${result}=    Run dialog
+#     Log    ${result}
+#     IF    '${result.options}' == 'criar_nota_fiscal'
+#         RPA.DESKTOP.WINDOWS.Open File  robo_Criar_Nota_Fiscal.lnk    # C:${/}Users${/}nicolas${/}robots${/}CriarNFSatisFaturamento${/}robo_Criar_Nota_Fiscal.lnk
+#     END    
+#     IF    '${result.options}' == 'robo_teste'
+#         RPA.Desktop.Windows.Open file  anotações2.txt
+#     END
+
+criar_nf
     ${arquivo}=    Coleta_Nome_do_Arquivo_Excel  
     sleep  1s
     go_to_invoice
@@ -40,8 +47,4 @@ criar_nf    ${choose}
     go_to_itens_nf
     add_itens_of_nf    ${arquivo}
     go_to_obs_NF
-    add_obs_NF    ${arquivo}
-    
-
-    
-
+    add_obs_NF    ${arquivo}  

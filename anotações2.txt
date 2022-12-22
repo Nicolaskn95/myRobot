@@ -21,11 +21,10 @@ daquela NF
 	A logica: DUVIDA como saber qual NF eu enviarei automnaticamente
 	
 		DUVIDAS: 
-		- NOTA FISCAL:No campo dados adicionais ele irá apagar a data ou irá preencher?
-		-NOTA FISCAL: É necessario os campos com descrição no arquivo excel? Sendo que o Satis irá preencher sozinho
-		-VALOR BRUTO NF - ???
-		-ITENS NF: no campo codigo de tributaçaõ de serviço se eu colocar 003 a box de deudução ele fica desativada. o codigo 003 é tera casos que ele ira colocar		
-	
+		- NOTA FISCAL: No campo dados adicionais ele irá apagar a data ou irá preencher?
+		- NOTA FISCAL: É necessario os campos com descrição no arquivo excel? Sendo que o Satis irá preencher sozinho
+		- ITENS NF: No campo codigo de tributaçaõ de serviço se eu colocar 003 a box de deudução ele fica desativada. o codigo 003 é tera casos que ele ira colocar
+		- OBS NOTA: O layout dos dados precisa ficar embaixo do outro
 	
 	
 	Cada linha da planilha corresponde a um item de serviço.  						
@@ -48,4 +47,10 @@ A busca pelo cliente será feita pelo CNPJ ou Código
 		00001	5	100.56													001	001001	0000000100 00002	10	101.56													002	001001	0000000100
 		00001	5	100.56													001	001001	000000010000002	10	101.56													002	001001	
 		00001	5	100.56													001	002		001
-		00001	5	100.56													001	001002		000000010000002	10	101.56						
+		00001	5	100.56													001	001 002		0000000100 00002	10	101.56		
+		
+		001		0000000100
+		00001	5	100.56													001	002		0000000100 00001	5	00002	10	101.56													001	001		000000010000003	V_11V_102.56													001	002		0000000100
+		100.56													001	002		            0000000100 00002	10	101.56					
+		001	001		0000000100
+		00001	5	100.56													001	002		000000010000002	10	101.56													001	001		0000000100
